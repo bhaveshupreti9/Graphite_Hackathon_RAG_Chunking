@@ -1,0 +1,22 @@
+{
+  "python_tutorial": {
+    "title": "Python Tutorial",
+    "description": "Code-heavy tutorial with headings, lists, tables and a few repeated passages."
+  },
+  "python_tutorial_print": {
+    "title": "Python Tutorial (PDF)",
+    "description": "The same tutorial as a printed PDF, with page headers, footers and page numbers to clean."
+  },
+  "api_reference": {
+    "title": "REST API Reference",
+    "description": "Endpoint tables, code examples and an ordered list of statuses. Good for testing table integrity."
+  },
+  "company_handbook": {
+    "title": "Company Handbook",
+    "description": "Plain text with bullet lists and a repeated sentence."
+  },
+  "sales_2026": {
+    "title": "Sales Data 2026 (CSV)",
+    "description": "120 orders with dates, regions, products, units, prices and revenue. Try questions about totals, top products and returns."
+  }
+}

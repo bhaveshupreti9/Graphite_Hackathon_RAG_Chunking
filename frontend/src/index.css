@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Design tokens. Every colour in the app comes from here (Tailwind, charts and the 3D scenes read
+  these variables). Values are space-separated RGB so Tailwind can apply opacity.
+  Chart and chunk-type colours were checked for colour-blind separation against --c-surface.
+*/
+:root {
+  --c-bg: 7 11 22; /* #070B16 ink navy */
+  --c-surface: 15 21 38; /* #0F1526 */
+  --c-surface-2: 23 32 54; /* #172036 */
+  --c-border: 38 48 74; /* #26304A */
+  --c-fg: 232 236 246; /* #E8ECF6 */
+  --c-muted: 141 151 179; /* #8D97B3 */
+
+  /* The single accent: electric indigo. Also the SmartChunk series colour. */
+  --c-accent: 124 108 255; /* #7C6CFF */
+  /* Traditional (naive) series colour in charts and method badges. */
+  --c-naive: 194 112 138; /* #C2708A */
+
+  /* Semantic colours, used identically everywhere. */
+  --c-good: 61 220 151; /* intact / good  #3DDC97 */
+  --c-bad: 255 92 108; /* broken / damaged #FF5C6C */
+  --c-noise: 124 132 156; /* removed noise  #7C849C */
+
+  /* Fixed chunk-type colours (3D blocks, badges, charts). */
+  --c-type-prose: 46 150 206; /* #2E96CE */
+  --c-type-code: 180 142 16; /* #B48E10 */
+  --c-type-table: 198 91 217; /* #C65BD9 */
+  --c-type-list: 207 107 34; /* #CF6B22 */
+
+  --nav-h: 4rem;
+  --page-max: 78rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+
+  color-scheme: dark;
+}
+
+/*
+  Light theme for the working pages (upload, explorer, chats, comparisons, results). The landing page
+  keeps the dark theme. Layout sets data-theme on <html> per route. Chart and chunk-type colours were
+  re-checked for colour-blind separation against white.
+*/
+:root[data-theme='light'] {
+  --c-bg: 246 247 251; /* #F6F7FB */
+  --c-surface: 255 255 255; /* #FFFFFF */
+  --c-surface-2: 238 240 246; /* #EEF0F6 */
+  --c-border: 216 220 232; /* #D8DCE8 */
+  --c-fg: 20 24 38; /* #141826 */
+  --c-muted: 88 96 118; /* #586076 */
+
+  --c-accent: 91 75 230; /* #5B4BE6 */
+  --c-naive: 180 80 110; /* #B4506E */
+
+  --c-good: 19 138 90; /* #138A5A */
+  --c-bad: 214 58 74; /* #D63A4A */
+  --c-noise: 122 129 150; /* #7A8196 */
+
+  --c-type-prose: 31 127 184; /* #1F7FB8 */
+  --c-type-code: 154 116 0; /* #9A7400 */
+  --c-type-table: 169 61 191; /* #A93DBF */
+  --c-type-list: 181 86 26; /* #B5561A */
+
+  color-scheme: light;
+}
+
+@layer base {
+  html {
+    @apply bg-bg text-fg antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  body {
+    @apply min-h-screen bg-bg font-sans text-[15px] leading-relaxed;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-variation-settings: 'wdth' 90;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-bg;
+  }
+
+  code,
+  pre,
+  kbd {
+    @apply font-mono;
+  }
+
+  ::selection {
+    background: rgb(var(--c-accent) / 0.35);
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-[var(--radius-md)] border border-border bg-surface;
+  }
+
+  /* Kept for the shared state components. */
+  .card {
+    @apply rounded-[var(--radius-md)] border border-border bg-surface;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-[var(--radius-sm)] border border-border bg-surface-2 px-4 py-2 text-sm font-medium text-fg transition-colors hover:border-accent/70 hover:bg-surface-2/80 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply border-accent bg-accent text-white hover:bg-accent/85;
+  }
+
+  .btn-ghost {
+    @apply border-transparent bg-transparent text-muted hover:border-border hover:bg-surface-2 hover:text-fg;
+  }
+
+  .btn-danger {
+    @apply border-bad/50 bg-bad/10 text-bad hover:border-bad hover:bg-bad/20;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-2 px-2.5 py-0.5 text-xs text-muted;
+  }
+
+  .input {
+    @apply w-full rounded-[var(--radius-sm)] border border-border bg-bg px-3 py-2 text-sm text-fg placeholder:text-muted/70 focus:border-accent;
+  }
+
+  .label {
+    @apply text-sm font-medium text-fg;
+  }
+
+  .kicker {
+    @apply text-sm text-muted;
+  }
+
+  .code-block {
+    @apply overflow-x-auto whitespace-pre rounded-[var(--radius-sm)] border border-border bg-bg p-3 font-mono text-[13px] leading-6 text-fg/90;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image:
+      linear-gradient(rgb(var(--c-border) / 0.35) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--c-border) / 0.35) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--c-border)) transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

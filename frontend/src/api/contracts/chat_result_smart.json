@@ -1,0 +1,52 @@
+{
+  "method": "smart",
+  "answer": "Binary search halves the search range each step, giving O(log n) time. See the code in 'Algorithms > Search > Binary Search'.",
+  "standalone_question": "What is the time complexity of binary search?",
+  "sources": [
+    { "chunk_id": "doc_3fa9c1b2_smart_0017", "heading_path": ["Algorithms", "Search", "Binary Search"], "page": 12 },
+    { "chunk_id": "doc_3fa9c1b2_smart_0021", "heading_path": ["Algorithms", "Complexity"], "page": 13 }
+  ],
+  "retrieved_chunks": [
+    {
+      "chunk": {
+        "chunk_id": "doc_3fa9c1b2_smart_0017",
+        "text": "## Binary Search\n```python\ndef binary_search(a, x):\n    ...\n```",
+        "source": "python_tutorial.pdf",
+        "page": 12,
+        "heading_path": ["Algorithms", "Search", "Binary Search"],
+        "type": "code",
+        "token_count": 214
+      },
+      "score": 0.83
+    },
+    {
+      "chunk": {
+        "chunk_id": "doc_3fa9c1b2_smart_0021",
+        "text": "## Complexity\n\n- Linear search: O(n)\n- Binary search: O(log n)\n- Sorting with sorted(): O(n log n)",
+        "source": "python_tutorial.pdf",
+        "page": 13,
+        "heading_path": ["Algorithms", "Complexity"],
+        "type": "list",
+        "token_count": 31
+      },
+      "score": 0.71
+    },
+    {
+      "chunk": {
+        "chunk_id": "doc_3fa9c1b2_smart_0016",
+        "text": "## Search\n\nLinear search checks every element in turn and takes O(n) time. When the data is sorted, binary search is much faster.",
+        "source": "python_tutorial.pdf",
+        "page": 12,
+        "heading_path": ["Algorithms", "Search"],
+        "type": "prose",
+        "token_count": 33
+      },
+      "score": 0.58
+    }
+  ],
+  "prompt_sent": "You are a careful assistant. Answer the question using ONLY the context below.\nIf the context does not contain the answer, say you could not find it in the document.\nCite sources as [heading path, page] when available. Keep code and tables exactly as given.\n\nContext:\n[1] [Source: Algorithms > Search > Binary Search | page 12 | code]\n## Binary Search\n```python\ndef binary_search(a, x):\n    ...\n```\n\n[2] [Source: Algorithms > Complexity | page 13 | list]\n## Complexity\n\n- Linear search: O(n)\n- Binary search: O(log n)\n- Sorting with sorted(): O(n log n)\n\n[3] [Source: Algorithms > Search | page 12 | prose]\n## Search\n\nLinear search checks every element in turn and takes O(n) time. When the data is sorted, binary search is much faster.\n\nQuestion: What is the time complexity of binary search?",
+  "tokens_used": { "prompt": 1450, "completion": 96, "total": 1546 },
+  "context_window_limit": 8192,
+  "latency_ms": 1820,
+  "not_found": false
+}

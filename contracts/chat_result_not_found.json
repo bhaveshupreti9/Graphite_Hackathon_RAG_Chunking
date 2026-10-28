@@ -1,0 +1,37 @@
+{
+  "method": "smart",
+  "answer": "Not found in the document.",
+  "standalone_question": "What is the weather in Paris today?",
+  "sources": [],
+  "retrieved_chunks": [
+    {
+      "chunk": {
+        "chunk_id": "doc_3fa9c1b2_smart_0000",
+        "text": "# Introduction\n\nPython is a high-level, general-purpose programming language. This tutorial walks through data types, control flow, functions and common algorithms.",
+        "source": "python_tutorial.pdf",
+        "page": 1,
+        "heading_path": ["Introduction"],
+        "type": "prose",
+        "token_count": 38
+      },
+      "score": 0.18
+    },
+    {
+      "chunk": {
+        "chunk_id": "doc_3fa9c1b2_smart_0003",
+        "text": "## Strings\n\nStrings are immutable sequences of characters. Use single or double quotes, and triple quotes for multi-line text. Slicing returns a new string and never modifies the original.",
+        "source": "python_tutorial.pdf",
+        "page": 5,
+        "heading_path": ["Data types", "Strings"],
+        "type": "prose",
+        "token_count": 41
+      },
+      "score": 0.12
+    }
+  ],
+  "prompt_sent": "",
+  "tokens_used": { "prompt": 0, "completion": 0, "total": 0 },
+  "context_window_limit": 8192,
+  "latency_ms": 140,
+  "not_found": true
+}

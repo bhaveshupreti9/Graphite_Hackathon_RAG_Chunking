@@ -1,0 +1,37 @@
+Welcome to Northwind
+
+This handbook explains how we work: hours, leave, expenses and security. If something here is unclear, ask your manager or the People team in the #people channel.
+
+Working hours
+
+Core hours are 10:00 to 16:00 in your local time zone. Outside core hours you can arrange your day as you like, as long as your team knows when to reach you. Please keep your calendar up to date so colleagues can see when you are available.
+
+Leave
+
+- Annual leave: 25 days per year, plus public holidays.
+- Sick leave: tell your manager before 10:00 on the first day.
+- Parental leave: 20 weeks at full pay for every new parent.
+- Unpaid leave: up to 4 weeks per year with manager approval.
+
+Request leave in the HR portal at least two weeks ahead for anything longer than three days.
+
+Expenses
+
+You can claim travel, meals while travelling, and equipment up to 300 per year without pre-approval. Submit receipts in the expenses tool within 30 days. Anything above 300 needs approval from your manager before you buy it.
+
+Security
+
+- Use the password manager for every work account.
+- Turn on two-factor authentication everywhere it is offered.
+- Lock your screen whenever you step away.
+- Report lost devices to IT within one hour.
+
+Please keep your calendar up to date so colleagues can see when you are available.
+
+Remote work
+
+You can work from anywhere in your country of employment. Working from another country for more than two weeks needs approval because of tax and insurance rules. We pay for a desk, a chair and a monitor for your home office.
+
+Leaving Northwind
+
+Give the notice period in your contract. Return equipment within two weeks of your last day. Your manager will schedule an exit conversation to hear what we could do better.

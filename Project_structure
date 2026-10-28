@@ -1,0 +1,73 @@
+smartchunk/
+│
+├── README.md                       # Overview, setup steps, how to run, team, screenshots
+├── requirements.txt                # Dependencies (already finalized)
+├── .env.example                    # Template: LLM_API_KEY, LLM_BASE_URL, LLM_MODEL
+├── .env                            # Your real keys (never commit)
+├── .gitignore                      # venv/, .env, __pycache__/, chroma_db/, *.pyc
+│
+├── smartchunk/                     # THE ENGINE (the main product)
+│   ├── __init__.py                 # Exposes chunk_document()
+│   ├── config.py                   # All settings in one place
+│   ├── models.py                   # Data classes: Block, Chunk
+│   ├── pdf_loader.py               # PDF → list of page texts/blocks
+│   ├── parser.py                   # Text/Markdown → typed blocks
+│   ├── semantic.py                 # Embeddings + topic boundary detection
+│   ├── cleaner.py                  # Header/footer + duplicate removal
+│   ├── chunker.py                  # Orchestrator combining all steps
+│   ├── tokenizer.py                # Token counting helper
+│   └── exporter.py                 # Chunks → JSONL
+│
+├── baseline/
+│   └── naive.py                    # Traditional fixed-size splitter
+│
+├── retrieval/
+│   ├── embedder.py                 # Loads and caches the embedding model
+│   ├── store.py                    # ChromaDB: create/query/delete collections
+│   ├── rag.py                      # Prompt builder + LLM call + citations
+│   └── llm_client.py               # OpenAI-compatible client wrapper
+│
+├── classifier/                     # OPTIONAL: trained boundary model
+│   ├── build_dataset.py            # Creates labelled sentence pairs from headings
+│   ├── features.py                 # Feature extraction for each sentence pair
+│   ├── train.py                    # Trains and saves the classifier
+│   ├── evaluate.py                 # Precision/recall/F1 vs threshold method
+│   └── model.pkl                   # Saved trained model
+│
+├── eval/
+│   ├── questions.json              # Questions + known answer passages
+│   ├── metrics.py                  # Recall@k, MRR, structural damage counts
+│   ├── run_eval.py                 # Runs both methods, writes results.json
+│   └── results.json                # Pre-computed numbers shown on the dashboard
+│
+├── app/                            # STREAMLIT WEBSITE
+│   ├── Home.py                     # Page: Upload & Process
+│   ├── components.py               # Reusable UI pieces
+│   ├── state.py                    # Session state helpers
+│   ├── styles.css                  # Colour code: red/green/grey
+│   └── pages/
+│       ├── 1_Chunk_Explorer.py
+│       ├── 2_SmartChunk_Chat.py
+│       ├── 3_Traditional_Chat.py
+│       ├── 4_Compare.py
+│       ├── 5_Evaluation.py
+│       └── 6_How_It_Works.py
+│
+├── data/
+│   ├── samples/                    # Demo documents (messy PDF, MD with code, MD with tables)
+│   ├── training/                   # Documents for the classifier
+│   └── uploads/                    # Temporary uploaded files (git-ignored)
+│
+├── chroma_db/                      # Auto-created vector DB storage (git-ignored)
+├── outputs/                        # Exported JSONL files (git-ignored)
+│
+├── tests/
+│   ├── test_parser.py
+│   ├── test_cleaner.py
+│   ├── test_chunker.py
+│   ├── test_naive.py
+│   └── test_store.py
+│
+└── docs/
+    ├── architecture.png            # Pipeline diagram for judges
+    └── presentation_notes.md       # Demo script and talking points

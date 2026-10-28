@@ -1,0 +1,96 @@
+{
+  "doc_id": "doc_3fa9c1b2",
+  "smart_stats": {
+    "chunk_count": 24,
+    "avg_tokens": 61.4,
+    "type_counts": {
+      "prose": 8,
+      "code": 8,
+      "table": 4,
+      "list": 4
+    },
+    "split_code_blocks": 0,
+    "split_tables": 0,
+    "split_lists": 0,
+    "orphan_headings": 0,
+    "exact_duplicates_removed": 3,
+    "near_duplicates_removed": 2,
+    "noise_lines_removed": 36,
+    "metadata_fields_present": 7
+  },
+  "naive_stats": {
+    "chunk_count": 31,
+    "avg_tokens": 478.2,
+    "type_counts": {
+      "prose": 22,
+      "code": 5,
+      "table": 2,
+      "list": 2
+    },
+    "split_code_blocks": 4,
+    "split_tables": 2,
+    "split_lists": 3,
+    "orphan_headings": 5,
+    "exact_duplicates_removed": 0,
+    "near_duplicates_removed": 0,
+    "noise_lines_removed": 0,
+    "metadata_fields_present": 2
+  },
+  "removed_report": {
+    "items": [
+      {
+        "kind": "header",
+        "text": "Python Tutorial - Release 3.12",
+        "page": 2,
+        "reason": "Repeated on 20 of 24 pages (83%) within the first 3 lines"
+      },
+      {
+        "kind": "header",
+        "text": "Python Tutorial - Release 3.12",
+        "page": 3,
+        "reason": "Repeated on 20 of 24 pages (83%) within the first 3 lines"
+      },
+      {
+        "kind": "footer",
+        "text": "Page 7 of 24",
+        "page": 7,
+        "reason": "Normalised line 'page # of #' appears on 24 of 24 pages within the last 3 lines"
+      },
+      {
+        "kind": "footer",
+        "text": "(c) 2026 Example Corp. All rights reserved.",
+        "page": 8,
+        "reason": "Repeated on 22 of 24 pages (92%) within the last 3 lines"
+      },
+      {
+        "kind": "exact_duplicate",
+        "text": "Note: Python uses zero-based indexing for lists.",
+        "page": 9,
+        "reason": "Identical (SHA-256) to chunk doc_3fa9c1b2_smart_0004"
+      },
+      {
+        "kind": "near_duplicate",
+        "text": "Binary search needs a sorted list and runs in O(log n) time.",
+        "page": 13,
+        "reason": "Cosine similarity 0.97 with chunk doc_3fa9c1b2_smart_0016 (threshold 0.95)"
+      },
+      {
+        "kind": "exact_duplicate",
+        "text": "Click here to download the full source code for this chapter.",
+        "page": null,
+        "reason": "Identical (SHA-256) to chunk doc_3fa9c1b2_smart_0010"
+      }
+    ]
+  },
+  "settings": {
+    "min_chunk_tokens": 80,
+    "max_chunk_tokens": 300,
+    "similarity_threshold": 0.45,
+    "dedup_threshold": 0.95,
+    "top_k": 5,
+    "naive_chunk_tokens": 500,
+    "naive_overlap_tokens": 50,
+    "not_found_threshold": 0.25
+  },
+  "warnings": []
+}

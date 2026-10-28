@@ -1,0 +1,11 @@
+{
+  "doc_id": "doc_3fa9c1b2",
+  "summary": "A beginner-friendly Python tutorial covering core data types, control flow, functions and a short chapter on searching algorithms such as linear and binary search, including their time complexity.",
+  "key_topics": ["Data types", "Strings", "Functions", "Searching algorithms", "Binary search", "Time complexity"],
+  "suggested_questions": [
+    "What is the time complexity of binary search?",
+    "How do I define a function in Python?",
+    "Which numeric types does Python provide and are they mutable?",
+    "What is the difference between linear search and binary search?"
+  ]
+}

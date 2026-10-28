@@ -1,0 +1,22 @@
+{
+  "recap": "You asked two questions about the Python tutorial. SmartChunk kept the binary search code and the complexity list intact, so its answers were complete. The traditional chunker cut the code across two chunks, which made its answer vague.",
+  "key_findings": [
+    "SmartChunk answered the code and complexity questions fully; the naive chunker returned a partial function.",
+    "Naive chunks carried page footers such as 'Page 13 of 24', adding noise to the prompt.",
+    "SmartChunk used fewer prompt tokens for the same question, leaving more room in the context window."
+  ],
+  "qa_rows": [
+    {
+      "question": "What is the time complexity of binary search?",
+      "smart_answer": "Binary search halves the search range each step, giving O(log n) time. See the code in 'Algorithms > Search > Binary Search'.",
+      "naive_answer": "Binary search is a search algorithm. The context shows the start of a function but the rest is cut off, so the exact complexity cannot be confirmed.",
+      "winner": "smart"
+    },
+    {
+      "question": "How do I define a function in Python?",
+      "smart_answer": "Use the def keyword, for example: def greet(name): return 'Hello, ' + name.",
+      "naive_answer": "Use the def keyword followed by the function name and parameters, for example: def greet(name): return 'Hello, ' + name.",
+      "winner": "tie"
+    }
+  ]
+}

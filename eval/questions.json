@@ -1,0 +1,45 @@
+{
+  "_about": "Each question names the passage that answers it by the last heading above it and the block type. A retrieved chunk counts as a hit only if it contains at least 80% of that passage's words, so a code block or table cut in half does not count.",
+  "documents": {
+    "python_tutorial.md": [
+      {"question": "How do I check which Python version is installed and create a virtual environment?", "heading": "Installing Python", "type": "code"},
+      {"question": "Are strings mutable in Python?", "heading": "Strings", "type": "prose"},
+      {"question": "Which numeric types does Python have and are they mutable?", "heading": "Numeric types", "type": "table"},
+      {"question": "What is the time complexity of list insert and pop?", "heading": "List methods", "type": "table"},
+      {"question": "Show an example of an if elif else statement", "heading": "if statements", "type": "code"},
+      {"question": "How do I loop over a dictionary of scores?", "heading": "for loops", "type": "code"},
+      {"question": "How do I define a function with a default greeting?", "heading": "Defining functions", "type": "code"},
+      {"question": "Why should I not use a mutable default argument?", "heading": "Default arguments", "type": "prose"},
+      {"question": "What kinds of function arguments are there?", "heading": "Kinds of arguments", "type": "list"},
+      {"question": "Which standard library module should I use for dates or JSON?", "heading": "Standard library highlights", "type": "table"},
+      {"question": "Show the binary search implementation", "heading": "Binary Search", "type": "code"},
+      {"question": "How does merge sort work in code?", "heading": "Merge sort", "type": "code"},
+      {"question": "Which sorting algorithms are stable and what are their worst cases?", "heading": "Comparison of sorting algorithms", "type": "table"},
+      {"question": "What is the complexity of linear search, binary search and merge sort?", "heading": "Complexity", "type": "list"},
+      {"question": "How do I handle a ValueError when converting user input?", "heading": "Handling errors", "type": "code"},
+      {"question": "What does the dictionary get method return when a key is missing?", "heading": "Dictionary methods", "type": "table"},
+      {"question": "Show the BankAccount class with deposit and withdraw", "heading": "Defining a class", "type": "code"},
+      {"question": "What do __init__ and __repr__ do?", "heading": "Dunder methods", "type": "list"},
+      {"question": "Which file mode truncates the file?", "heading": "File modes", "type": "table"},
+      {"question": "How do I write a pytest test that expects an exception?", "heading": "Writing tests with pytest", "type": "code"},
+      {"question": "What cases should I test?", "heading": "What to test", "type": "list"}
+    ],
+    "api_reference.md": [
+      {"question": "How do I request an access token?", "heading": "Authentication", "type": "code"},
+      {"question": "What is the rate limit for creating orders?", "heading": "Endpoints", "type": "table"},
+      {"question": "Show Python code to create an order", "heading": "Creating an order", "type": "code"},
+      {"question": "What are the possible order statuses?", "heading": "Order statuses", "type": "list"},
+      {"question": "How does pagination work?", "heading": "Pagination", "type": "prose"},
+      {"question": "What does HTTP status 409 mean in this API?", "heading": "Errors", "type": "table"},
+      {"question": "How are webhooks verified?", "heading": "Webhooks", "type": "prose"},
+      {"question": "What changed in version 2.4?", "heading": "Changelog", "type": "list"}
+    ],
+    "company_handbook.txt": [
+      {"question": "What are the core working hours?", "heading": "Working hours", "type": "prose"},
+      {"question": "How many days of annual leave do I get?", "heading": "Leave", "type": "list"},
+      {"question": "What can I claim as expenses?", "heading": "Expenses", "type": "prose"},
+      {"question": "What are the security rules for work accounts?", "heading": "Security", "type": "list"},
+      {"question": "Can I work from another country?", "heading": "Remote work", "type": "prose"}
+    ]
+  }
+}

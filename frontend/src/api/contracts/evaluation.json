@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-10-20T09:30:00Z",
+  "documents": ["python_tutorial.pdf", "api_reference.md"],
+  "questions_count": 40,
+  "methods": {
+    "smart": {
+      "recall_at_5": 0.91,
+      "mrr": 0.78,
+      "by_type": {
+        "prose": { "recall_at_5": 0.93, "mrr": 0.81 },
+        "code": { "recall_at_5": 0.94, "mrr": 0.83 },
+        "table": { "recall_at_5": 0.9, "mrr": 0.75 },
+        "list": { "recall_at_5": 0.88, "mrr": 0.72 }
+      }
+    },
+    "naive": {
+      "recall_at_5": 0.64,
+      "mrr": 0.49,
+      "by_type": {
+        "prose": { "recall_at_5": 0.78, "mrr": 0.61 },
+        "code": { "recall_at_5": 0.52, "mrr": 0.38 },
+        "table": { "recall_at_5": 0.55, "mrr": 0.4 },
+        "list": { "recall_at_5": 0.7, "mrr": 0.55 }
+      }
+    }
+  },
+  "damage": {
+    "smart": { "split_code_blocks": 0, "split_tables": 0, "duplicates": 0, "noise_chunks": 0 },
+    "naive": { "split_code_blocks": 7, "split_tables": 3, "duplicates": 5, "noise_chunks": 9 }
+  },
+  "classifier": {
+    "threshold": { "precision": 0.71, "recall": 0.64, "f1": 0.67 },
+    "trained": { "precision": 0.78, "recall": 0.74, "f1": 0.76 },
+    "test_pairs": 412
+  }
+}

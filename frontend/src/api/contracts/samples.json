@@ -1,0 +1,20 @@
+[
+  {
+    "sample_id": "python_tutorial",
+    "title": "Python Tutorial",
+    "description": "Code-heavy tutorial with headings, lists, tables and repeated page headers and footers.",
+    "filename": "python_tutorial.md"
+  },
+  {
+    "sample_id": "api_reference",
+    "title": "REST API Reference",
+    "description": "Endpoint tables, JSON examples and error code lists. Good for testing table integrity.",
+    "filename": "api_reference.md"
+  },
+  {
+    "sample_id": "company_handbook",
+    "title": "Company Handbook",
+    "description": "Plain prose with nested bullet lists and a few near-duplicate paragraphs.",
+    "filename": "company_handbook.txt"
+  }
+]

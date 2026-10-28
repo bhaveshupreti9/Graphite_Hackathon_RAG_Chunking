@@ -1,0 +1,223 @@
+{
+  "items": [
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0000",
+      "text": "# Introduction\n\nPython is a high-level, general-purpose programming language. This tutorial walks through data types, control flow, functions, modules and a few classic algorithms, with runnable examples in every chapter.",
+      "source": "python_tutorial.pdf",
+      "page": 1,
+      "heading_path": ["Introduction"],
+      "type": "prose",
+      "token_count": 46
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0001",
+      "text": "## What you will learn\n\n- Data types and variables\n- Control flow with if, for and while\n- Writing and calling functions\n- Importing modules from the standard library\n- Searching and sorting algorithms and their complexity",
+      "source": "python_tutorial.pdf",
+      "page": 1,
+      "heading_path": ["Introduction", "What you will learn"],
+      "type": "list",
+      "token_count": 48
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0002",
+      "text": "## Installing Python\n\n```bash\n# check the installed version\npython3 --version\n\n# create and activate a virtual environment\npython3 -m venv .venv\nsource .venv/bin/activate\n```",
+      "source": "python_tutorial.pdf",
+      "page": 2,
+      "heading_path": ["Introduction", "Installing Python"],
+      "type": "code",
+      "token_count": 52
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0003",
+      "text": "## Strings\n\nStrings are immutable sequences of characters. Use single or double quotes, and triple quotes for multi-line text. Slicing returns a new string and never modifies the original, so s[0:3] gives the first three characters.",
+      "source": "python_tutorial.pdf",
+      "page": 3,
+      "heading_path": ["Data types", "Strings"],
+      "type": "prose",
+      "token_count": 52
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0004",
+      "text": "## Lists\n\nLists are ordered, mutable collections that can hold values of any type. Note: Python uses zero-based indexing for lists, so the first element is items[0] and the last is items[-1].",
+      "source": "python_tutorial.pdf",
+      "page": 3,
+      "heading_path": ["Data types", "Lists"],
+      "type": "prose",
+      "token_count": 47
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0005",
+      "text": "## Numeric types\n\n| Type | Example | Mutable | Notes |\n|---|---|---|---|\n| int | 42 | no | Arbitrary precision |\n| float | 3.14 | no | 64-bit IEEE 754 |\n| complex | 1+2j | no | Real and imaginary parts |\n| bool | True | no | Subclass of int |",
+      "source": "python_tutorial.pdf",
+      "page": 4,
+      "heading_path": ["Data types", "Numeric types"],
+      "type": "table",
+      "token_count": 78
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0006",
+      "text": "## List methods\n\n| Method | What it does | Time |\n|---|---|---|\n| append(x) | Adds x to the end | O(1) |\n| insert(i, x) | Inserts x at index i | O(n) |\n| pop() | Removes and returns the last item | O(1) |\n| sort() | Sorts the list in place | O(n log n) |\n| index(x) | Returns the position of x | O(n) |",
+      "source": "python_tutorial.pdf",
+      "page": 4,
+      "heading_path": ["Data types", "Lists", "List methods"],
+      "type": "table",
+      "token_count": 96
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0007",
+      "text": "## if statements\n\n```python\ntemperature = 31\n\nif temperature > 30:\n    print('Hot day')\nelif temperature > 20:\n    print('Warm day')\nelse:\n    print('Cool day')\n```",
+      "source": "python_tutorial.pdf",
+      "page": 5,
+      "heading_path": ["Control flow", "if statements"],
+      "type": "code",
+      "token_count": 54
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0008",
+      "text": "## for loops\n\n```python\nscores = {'ana': 91, 'ben': 78, 'chen': 85}\n\nfor name, score in scores.items():\n    if score >= 80:\n        print(f'{name} passed with {score}')\n```",
+      "source": "python_tutorial.pdf",
+      "page": 5,
+      "heading_path": ["Control flow", "for loops"],
+      "type": "code",
+      "token_count": 58
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0009",
+      "text": "## while loops\n\nA while loop repeats as long as its condition is true. Use break to leave the loop early and continue to skip to the next iteration. Always make sure something inside the loop changes the condition, or it will run forever.",
+      "source": "python_tutorial.pdf",
+      "page": 6,
+      "heading_path": ["Control flow", "while loops"],
+      "type": "prose",
+      "token_count": 51
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0010",
+      "text": "## Exercises\n\nEach chapter ends with short exercises. Click here to download the full source code for this chapter. Try to solve each exercise before you look at the solution file.",
+      "source": "python_tutorial.pdf",
+      "page": 6,
+      "heading_path": ["Control flow", "Exercises"],
+      "type": "prose",
+      "token_count": 38
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0011",
+      "text": "## Defining functions\n\n```python\ndef greet(name, greeting='Hello'):\n    \"\"\"Return a greeting for name.\"\"\"\n    return f'{greeting}, {name}!'\n\nprint(greet('world'))\nprint(greet('Ada', greeting='Hi'))\n```",
+      "source": "python_tutorial.pdf",
+      "page": 7,
+      "heading_path": ["Functions", "Defining functions"],
+      "type": "code",
+      "token_count": 62
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0012",
+      "text": "## Default arguments\n\nDefault values are evaluated once, when the function is defined. Never use a mutable default such as an empty list; use None and create the list inside the function instead.",
+      "source": "python_tutorial.pdf",
+      "page": 7,
+      "heading_path": ["Functions", "Default arguments"],
+      "type": "prose",
+      "token_count": 42
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0013",
+      "text": "## Kinds of arguments\n\n1. Positional arguments are matched by order.\n2. Keyword arguments are matched by name.\n3. *args collects extra positional arguments into a tuple.\n4. **kwargs collects extra keyword arguments into a dict.",
+      "source": "python_tutorial.pdf",
+      "page": 8,
+      "heading_path": ["Functions", "Kinds of arguments"],
+      "type": "list",
+      "token_count": 50
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0014",
+      "text": "## Importing modules\n\n```python\nimport math\nfrom collections import Counter\n\nprint(math.sqrt(16))\nwords = 'the cat and the hat'.split()\nprint(Counter(words).most_common(1))\n```",
+      "source": "python_tutorial.pdf",
+      "page": 9,
+      "heading_path": ["Modules", "Importing modules"],
+      "type": "code",
+      "token_count": 49
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0015",
+      "text": "## Standard library highlights\n\n| Module | Use it for |\n|---|---|\n| os | Files, folders and environment variables |\n| json | Reading and writing JSON |\n| datetime | Dates, times and time zones |\n| re | Regular expressions |\n| itertools | Fast looping building blocks |",
+      "source": "python_tutorial.pdf",
+      "page": 9,
+      "heading_path": ["Modules", "Standard library highlights"],
+      "type": "table",
+      "token_count": 70
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0016",
+      "text": "## Search\n\nLinear search checks every element in turn and takes O(n) time. When the data is sorted, binary search is much faster because it discards half of the remaining range at every step.",
+      "source": "python_tutorial.pdf",
+      "page": 12,
+      "heading_path": ["Algorithms", "Search"],
+      "type": "prose",
+      "token_count": 43
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0017",
+      "text": "## Binary Search\n\n```python\ndef binary_search(a, x):\n    lo, hi = 0, len(a) - 1\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if a[mid] == x:\n            return mid\n        if a[mid] < x:\n            lo = mid + 1\n        else:\n            hi = mid - 1\n    return -1\n```\n\nBinary search runs in O(log n) time on a sorted list.",
+      "source": "python_tutorial.pdf",
+      "page": 12,
+      "heading_path": ["Algorithms", "Search", "Binary Search"],
+      "type": "code",
+      "token_count": 112
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0018",
+      "text": "## Sorting\n\nPython's built-in sorted() uses Timsort, a stable hybrid of merge sort and insertion sort. It returns a new list, while list.sort() sorts in place and returns None.",
+      "source": "python_tutorial.pdf",
+      "page": 13,
+      "heading_path": ["Algorithms", "Sorting"],
+      "type": "prose",
+      "token_count": 41
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0019",
+      "text": "## Merge sort\n\n```python\ndef merge_sort(items):\n    if len(items) <= 1:\n        return items\n    mid = len(items) // 2\n    left = merge_sort(items[:mid])\n    right = merge_sort(items[mid:])\n    merged = []\n    while left and right:\n        merged.append(left.pop(0) if left[0] <= right[0] else right.pop(0))\n    return merged + left + right\n```",
+      "source": "python_tutorial.pdf",
+      "page": 13,
+      "heading_path": ["Algorithms", "Sorting", "Merge sort"],
+      "type": "code",
+      "token_count": 104
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0020",
+      "text": "## Comparison of sorting algorithms\n\n| Algorithm | Best | Average | Worst | Stable |\n|---|---|---|---|---|\n| Bubble sort | O(n) | O(n^2) | O(n^2) | yes |\n| Merge sort | O(n log n) | O(n log n) | O(n log n) | yes |\n| Quick sort | O(n log n) | O(n log n) | O(n^2) | no |\n| Timsort | O(n) | O(n log n) | O(n log n) | yes |",
+      "source": "python_tutorial.pdf",
+      "page": 14,
+      "heading_path": ["Algorithms", "Sorting", "Comparison of sorting algorithms"],
+      "type": "table",
+      "token_count": 121
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0021",
+      "text": "## Complexity\n\n- Linear search: O(n)\n- Binary search: O(log n)\n- Merge sort: O(n log n)\n- Dictionary lookup: O(1) on average",
+      "source": "python_tutorial.pdf",
+      "page": 14,
+      "heading_path": ["Algorithms", "Complexity"],
+      "type": "list",
+      "token_count": 38
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0022",
+      "text": "## Handling errors\n\n```python\ntry:\n    value = int(input('Enter a number: '))\nexcept ValueError:\n    print('That was not a number.')\nelse:\n    print(f'You entered {value}')\nfinally:\n    print('Done.')\n```",
+      "source": "python_tutorial.pdf",
+      "page": 15,
+      "heading_path": ["Errors", "Handling errors"],
+      "type": "code",
+      "token_count": 58
+    },
+    {
+      "chunk_id": "doc_3fa9c1b2_smart_0023",
+      "text": "## Summary\n\n- Strings and numbers are immutable; lists and dicts are mutable.\n- Prefer for loops over while loops when you know what you are iterating over.\n- Use binary search on sorted data and sorted() when you need a new sorted list.\n- Catch the specific exception you expect, never a bare except.",
+      "source": "python_tutorial.pdf",
+      "page": 16,
+      "heading_path": ["Summary"],
+      "type": "list",
+      "token_count": 64
+    }
+  ],
+  "total": 24,
+  "page": 1,
+  "page_size": 50
+}

@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+data/uploads/
+data/registry.json
+outputs/
+chroma_db/
+eval/results.json
+classifier/model.joblib
+data/users.json
+data/sessions.json
+data/history/
