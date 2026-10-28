@@ -5,6 +5,7 @@ import { cn } from '@/lib/cn'
 import { ROUTES } from '@/lib/constants'
 import { useAppStore } from '@/store/useAppStore'
 import { ErrorBoundary } from './ErrorBoundary'
+import { LoginBackground } from './LoginBackground'
 import { LoadingState } from './LoadingState'
 import { Navbar } from './Navbar'
 
@@ -35,9 +36,11 @@ export function Layout() {
   const location = useLocation()
   const outlet = useOutlet()
   const isLanding = location.pathname === ROUTES.landing
+  // The login page has its own dark, animated design (no grid background, no footer).
+  const isLogin = location.pathname === ROUTES.login
   const appTheme = useAppStore((state) => state.appTheme)
   // The landing page and intro are designed for dark; every other page follows the toggle.
-  const theme = isLanding ? 'dark' : appTheme
+  const theme = isLanding || isLogin ? 'dark' : appTheme
   // Set before children render so 3D scenes and charts read this theme's colour tokens.
   if (typeof document !== 'undefined' && document.documentElement.dataset.theme !== theme) {
     document.documentElement.dataset.theme = theme
@@ -52,13 +55,16 @@ export function Layout() {
         >
           Skip to content
         </a>
-        {isLanding ? null : <BackgroundDepth />}
+        {isLanding || isLogin ? null : <BackgroundDepth />}
+        {/* Rendered here, outside the animated page wrapper, so it stays fixed to the screen. */}
+        {isLogin ? <LoginBackground /> : null}
         <Navbar />
         <main
           id="main"
           className={cn(
             'flex-1',
             isLanding ? 'w-full' : 'mx-auto w-full max-w-page px-4 pb-16 pt-8 sm:px-6',
+            isLogin && 'relative z-[1]', // above the login page's animated background
           )}
         >
           <AnimatePresence mode="wait" initial={false}>
@@ -76,7 +82,7 @@ export function Layout() {
             </motion.div>
           </AnimatePresence>
         </main>
-        {isLanding ? null : (
+        {isLanding || isLogin ? null : (
           <footer className="border-t border-border px-4 py-6 text-center text-xs text-muted">
             Both chatbots share the embedder, vector database settings, top-k, prompt, LLM and
             temperature 0. Only the chunking differs.

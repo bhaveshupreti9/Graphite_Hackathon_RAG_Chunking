@@ -80,8 +80,8 @@ function ThemeToggle() {
   const { pathname } = useLocation()
   const appTheme = useAppStore((state) => state.appTheme)
   const setAppTheme = useAppStore((state) => state.setAppTheme)
-  // The landing page is always dark, so the toggle would do nothing there.
-  if (pathname === ROUTES.landing) return null
+  // The landing and login pages are always dark, so the toggle would do nothing there.
+  if (pathname === ROUTES.landing || pathname === ROUTES.login) return null
   const dark = appTheme === 'dark'
   const label = dark ? 'Switch to light theme' : 'Switch to dark theme'
   return (

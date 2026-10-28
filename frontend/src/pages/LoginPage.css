@@ -1,0 +1,209 @@
+/* Login page design. Every rule is scoped under .sc-login so it cannot affect any other page. */
+
+.sc-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0 40px;
+  color: #fff;
+  font-family:
+    Inter,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+.sc-login h1 {
+  font-size: 46px;
+  line-height: 1.1;
+  margin: 0 0 20px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  text-align: center;
+}
+
+.sc-login .sc-login-sub {
+  max-width: 560px;
+  text-align: center;
+  color: #c9d2ee;
+  font-size: 19.5px;
+  line-height: 1.45;
+  margin: 0 0 56px;
+}
+
+.sc-login .sc-login-card {
+  width: 100%;
+  max-width: 584px;
+  background: rgba(10, 15, 28, 0.82);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 28px 29px 30px;
+}
+
+.sc-login .sc-login-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #111a2d;
+  border-radius: 11px;
+  padding: 4px;
+  margin-bottom: 28px;
+  height: 53px;
+}
+
+.sc-login .sc-login-tabs button {
+  background: none;
+  border: 0;
+  color: #8a96b8;
+  font:
+    500 17px Inter,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.sc-login .sc-login-tabs button:hover {
+  color: #fff;
+}
+
+.sc-login .sc-login-tabs button.on {
+  background: #080d19;
+  color: #fff;
+  font-weight: 600;
+}
+
+.sc-login label {
+  display: block;
+  font-weight: 600;
+  font-size: 17px;
+  margin: 0 0 12px;
+}
+
+.sc-login .sc-login-field {
+  margin-bottom: 24px;
+}
+
+.sc-login input {
+  width: 100%;
+  height: 52px;
+  background: #050810;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 0 16px;
+  font:
+    18px Inter,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  color: #fff;
+  outline: 0;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.sc-login input::placeholder {
+  color: #6f7a99;
+}
+
+.sc-login input:focus {
+  border-color: #5b52f5;
+  box-shadow: 0 0 0 2px rgba(110, 100, 255, 0.55);
+}
+
+.sc-login .sc-login-go {
+  width: 100%;
+  height: 50px;
+  border: 0;
+  border-radius: 10px;
+  background: #4545f2;
+  color: #fff;
+  font:
+    600 17px Inter,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  cursor: pointer;
+  margin-top: 2px;
+  transition:
+    background-color 0.15s,
+    opacity 0.15s;
+}
+
+.sc-login .sc-login-go:hover:not(:disabled) {
+  background: #5656ff;
+}
+
+.sc-login .sc-login-go:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.sc-login .sc-login-error {
+  margin: -8px 0 20px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(248, 113, 113, 0.4);
+  background: rgba(248, 113, 113, 0.1);
+  color: #fca5a5;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.sc-login .sc-login-alt {
+  text-align: center;
+  margin: 24px 0 0;
+  color: #c9d2ee;
+  font-size: 17px;
+}
+
+.sc-login .sc-login-alt button {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: #6d73ff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.sc-login .sc-login-alt button:hover {
+  text-decoration: underline;
+}
+
+.sc-login .sc-login-note {
+  margin-top: 20px;
+  text-align: center;
+  color: #8a96b8;
+  font-size: 13px;
+}
+
+@media (max-width: 560px) {
+  .sc-login {
+    padding-top: 24px;
+  }
+
+  .sc-login h1 {
+    font-size: 34px;
+  }
+
+  .sc-login .sc-login-sub {
+    font-size: 16px;
+    margin-bottom: 36px;
+  }
+
+  .sc-login .sc-login-card {
+    padding: 22px 18px 24px;
+  }
+}

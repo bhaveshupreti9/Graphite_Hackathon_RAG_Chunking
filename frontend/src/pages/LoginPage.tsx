@@ -6,9 +6,9 @@ import { login, register } from '@/api/client'
 import { toApiError } from '@/api/errors'
 import type { LoginRedirectState } from '@/components/RequireAuth'
 import { useIsMock } from '@/hooks/useIsMock'
-import { cn } from '@/lib/cn'
 import { ROUTES } from '@/lib/constants'
 import { useAppStore } from '@/store/useAppStore'
+import './LoginPage.css'
 
 type Mode = 'login' | 'register'
 
@@ -65,49 +65,40 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="mx-auto flex max-w-md flex-col gap-6 py-6 sm:py-12">
-      <div className="space-y-2 text-center">
-        <h1 className="text-3xl font-semibold">
-          {mode === 'login' ? 'Welcome back' : 'Create your account'}
-        </h1>
-        <p className="text-muted">
-          Your uploaded documents and their chunks are saved to your account, so you can open them
-          again from the Knowledge Base any time.
-        </p>
-      </div>
+    <div className="sc-login">
+      <h1>{mode === 'login' ? 'Welcome back' : 'Create your account'}</h1>
+      <p className="sc-login-sub">
+        Your uploaded documents and their chunks are saved to your account, so you can open them
+        again from the Knowledge Base any time.
+      </p>
 
-      <motion.div
-        initial={{ opacity: 0, y: 8 }}
+      <motion.section
+        className="sc-login-card"
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.25 }}
-        className="panel p-6 shadow-xl"
+        transition={{ duration: 0.3, ease: 'easeOut' }}
       >
-        <div role="tablist" className="mb-6 grid grid-cols-2 gap-1 rounded-md bg-surface-2 p-1">
+        <div className="sc-login-tabs" role="tablist">
           {(['login', 'register'] as const).map((value) => (
             <button
               key={value}
               type="button"
               role="tab"
               aria-selected={mode === value}
+              className={mode === value ? 'on' : undefined}
               onClick={() => switchMode(value)}
-              className={cn(
-                'rounded px-3 py-2 text-sm font-medium transition',
-                mode === value ? 'bg-surface text-fg shadow' : 'text-muted hover:text-fg',
-              )}
             >
               {value === 'login' ? 'Log in' : 'Sign up'}
             </button>
           ))}
         </div>
 
-        <form onSubmit={(event) => void submit(event)} className="space-y-4" noValidate>
-          <div className="space-y-1.5">
-            <label htmlFor="username" className="label">
-              Username
-            </label>
+        <form onSubmit={(event) => void submit(event)} noValidate>
+          <div className="sc-login-field">
+            <label htmlFor="username">Username</label>
             <input
               id="username"
-              className="input"
+              placeholder="e.g. aditya"
               autoComplete="username"
               autoFocus
               required
@@ -115,58 +106,47 @@ export default function LoginPage() {
               maxLength={32}
               value={username}
               onChange={(event) => setUsername(event.target.value)}
-              placeholder="e.g. aditya"
             />
           </div>
-          <div className="space-y-1.5">
-            <label htmlFor="password" className="label">
-              Password
-            </label>
+          <div className="sc-login-field">
+            <label htmlFor="password">Password</label>
             <input
               id="password"
               type="password"
-              className="input"
               autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
+              placeholder={mode === 'register' ? 'At least 6 characters' : undefined}
               required
               minLength={mode === 'register' ? 6 : 1}
               value={password}
               onChange={(event) => setPassword(event.target.value)}
-              placeholder={mode === 'register' ? 'At least 6 characters' : ''}
             />
           </div>
 
           {error ? (
-            <p
-              role="alert"
-              className="rounded-md border border-bad/40 bg-bad/10 px-3 py-2 text-sm text-bad"
-            >
+            <p role="alert" className="sc-login-error">
               {error}
             </p>
           ) : null}
 
           <button
             type="submit"
-            className="btn btn-primary w-full"
+            className="sc-login-go"
             disabled={busy || !username.trim() || !password}
           >
             {busy ? 'Please wait…' : mode === 'login' ? 'Log in' : 'Create account'}
           </button>
         </form>
 
-        <p className="mt-4 text-center text-sm text-muted">
+        <p className="sc-login-alt">
           {mode === 'login' ? 'New here? ' : 'Already have an account? '}
-          <button
-            type="button"
-            className="font-medium text-accent hover:underline"
-            onClick={() => switchMode(mode === 'login' ? 'register' : 'login')}
-          >
+          <button type="button" onClick={() => switchMode(mode === 'login' ? 'register' : 'login')}>
             {mode === 'login' ? 'Create an account' : 'Log in'}
           </button>
         </p>
-      </motion.div>
+      </motion.section>
 
       {mock ? (
-        <p className="text-center text-xs text-muted">
+        <p className="sc-login-note">
           Demo mode is on: any username and password work, and nothing is sent to a server.
         </p>
       ) : null}
