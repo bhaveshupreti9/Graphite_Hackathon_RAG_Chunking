@@ -3,6 +3,33 @@
 @tailwind utilities;
 
 /*
+  Inter: a typeface designed for reading on screens (tall lower case, open shapes, clear digits).
+  Self-hosted variable font (SIL Open Font License, see src/assets/fonts/Inter-LICENSE.txt).
+*/
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('./assets/fonts/inter-latin-ext-wght-normal.woff2') format('woff2-variations');
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
+    U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+    U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('./assets/fonts/inter-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/*
   Design tokens. Every colour in the app comes from here (Tailwind, charts and the 3D scenes read
   these variables). Values are space-separated RGB so Tailwind can apply opacity.
   Chart and chunk-type colours were checked for colour-blind separation against --c-surface.
@@ -13,7 +40,7 @@
   --c-surface-2: 23 32 54; /* #172036 */
   --c-border: 38 48 74; /* #26304A */
   --c-fg: 232 236 246; /* #E8ECF6 */
-  --c-muted: 141 151 179; /* #8D97B3 */
+  --c-muted: 168 177 201; /* #A8B1C9: secondary text, 8.5:1 on surface */
 
   /* The single accent: electric indigo. Also the SmartChunk series colour. */
   --c-accent: 124 108 255; /* #7C6CFF */
@@ -23,7 +50,7 @@
   /* Semantic colours, used identically everywhere. */
   --c-good: 61 220 151; /* intact / good  #3DDC97 */
   --c-bad: 255 92 108; /* broken / damaged #FF5C6C */
-  --c-noise: 124 132 156; /* removed noise  #7C849C */
+  --c-noise: 150 158 180; /* removed noise  #969EB4 */
 
   /* Fixed chunk-type colours (3D blocks, badges, charts). */
   --c-type-prose: 46 150 206; /* #2E96CE */
@@ -51,14 +78,14 @@
   --c-surface-2: 238 240 246; /* #EEF0F6 */
   --c-border: 216 220 232; /* #D8DCE8 */
   --c-fg: 20 24 38; /* #141826 */
-  --c-muted: 88 96 118; /* #586076 */
+  --c-muted: 72 79 99; /* #484F63: secondary text, 8:1 on white */
 
   --c-accent: 91 75 230; /* #5B4BE6 */
   --c-naive: 180 80 110; /* #B4506E */
 
   --c-good: 19 138 90; /* #138A5A */
   --c-bad: 214 58 74; /* #D63A4A */
-  --c-noise: 122 129 150; /* #7A8196 */
+  --c-noise: 98 105 126; /* #62697E */
 
   --c-type-prose: 31 127 184; /* #1F7FB8 */
   --c-type-code: 154 116 0; /* #9A7400 */
@@ -71,18 +98,18 @@
 @layer base {
   html {
     @apply bg-bg text-fg antialiased;
-    font-feature-settings: 'ss01', 'cv11';
+    /* Inter alternates that tell look-alike characters apart: l with a tail, I with serifs. */
+    font-feature-settings: 'cv05', 'cv08', 'calt';
   }
 
   body {
-    @apply min-h-screen bg-bg font-sans text-[15px] leading-relaxed;
+    @apply min-h-screen bg-bg font-sans text-base;
   }
 
   h1,
   h2,
   h3 {
-    font-variation-settings: 'wdth' 90;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.018em;
     text-wrap: balance;
   }
 
@@ -136,7 +163,7 @@
   }
 
   .input {
-    @apply w-full rounded-[var(--radius-sm)] border border-border bg-bg px-3 py-2 text-sm text-fg placeholder:text-muted/70 focus:border-accent;
+    @apply w-full rounded-[var(--radius-sm)] border border-border bg-bg px-3 py-2 text-sm text-fg placeholder:text-muted focus:border-accent;
   }
 
   .label {

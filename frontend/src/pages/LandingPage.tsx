@@ -219,7 +219,7 @@ function IntroSplash() {
             {phase === 'welcome' ? (
               <motion.h2
                 key="welcome"
-                className="absolute inset-0 flex items-center justify-center text-6xl font-bold text-white [font-variation-settings:'wdth'_78] [text-shadow:0_4px_40px_rgb(0_0_0/0.6)] sm:text-8xl"
+                className="absolute inset-0 flex items-center justify-center text-6xl font-bold text-white [text-shadow:0_4px_40px_rgb(0_0_0/0.6)] sm:text-8xl"
                 initial={{ opacity: 0, scale: 1.25, filter: 'blur(12px)', letterSpacing: '0.3em' }}
                 animate={{ opacity: 1, scale: 1, filter: 'blur(0px)', letterSpacing: '0em' }}
                 transition={{ duration: 0.9, ease: 'easeOut' }}
@@ -295,7 +295,7 @@ function SlicedHeadline({ text, reduced }: { text: string; reduced: boolean }) {
   const ease = [0.22, 1, 0.36, 1] as const
 
   return (
-    <h1 className="text-5xl font-bold tracking-tight !leading-[1.14] [font-variation-settings:'wdth'_78] sm:text-6xl lg:text-[5.4rem]">
+    <h1 className="text-5xl font-bold tracking-tight !leading-[1.14] sm:text-6xl lg:text-[4.6rem]">
       <span className="sr-only">{text}</span>
       <span aria-hidden="true" className="block">
         {firstLine}

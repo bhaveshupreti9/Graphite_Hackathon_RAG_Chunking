@@ -9,7 +9,7 @@ interface BreadcrumbProps {
 
 export function Breadcrumb({ path, className, emptyLabel = 'No heading' }: BreadcrumbProps) {
   if (path.length === 0) {
-    return <span className={cn('text-xs italic text-muted/70', className)}>{emptyLabel}</span>
+    return <span className={cn('text-xs italic text-muted', className)}>{emptyLabel}</span>
   }
   return (
     <nav aria-label="Heading path" className={cn('min-w-0', className)}>

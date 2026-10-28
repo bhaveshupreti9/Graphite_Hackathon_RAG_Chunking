@@ -12,7 +12,7 @@ import { useAppStore } from '@/store/useAppStore'
 
 const linkClass = ({ isActive }: { isActive: boolean }): string =>
   cn(
-    'block rounded-md px-3 py-2 text-sm transition',
+    'block whitespace-nowrap rounded-md px-3 py-2 text-sm transition',
     isActive ? 'bg-accent/15 text-fg' : 'text-muted hover:bg-surface-2 hover:text-fg',
   )
 
@@ -52,7 +52,7 @@ function NavDropdown({ group }: { group: NavGroup }) {
         aria-haspopup="true"
         onClick={() => setOpen((value) => !value)}
         className={cn(
-          'flex items-center gap-1 rounded-md px-3 py-2 text-sm transition hover:bg-surface-2 hover:text-fg',
+          'flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-2 text-sm transition hover:bg-surface-2 hover:text-fg',
           active ? 'text-fg' : 'text-muted',
         )}
       >
@@ -186,14 +186,14 @@ function NavControls() {
         : 'bg-noise'
 
   return (
-    <div className="flex flex-wrap items-center gap-2">
+    <div className="flex flex-wrap items-center gap-2 xl:flex-nowrap">
       {mock && !hasDocument ? (
         <button type="button" className="btn px-3 py-1.5 text-xs" onClick={loadDemoDocument}>
           Load demo document
         </button>
       ) : null}
       {hasDocument && filename ? (
-        <span className="chip max-w-40 truncate" title={filename}>
+        <span className="chip max-w-40 truncate xl:hidden 2xl:inline-flex" title={filename}>
           {filename}
         </span>
       ) : null}
@@ -267,7 +267,7 @@ export function Navbar() {
           SmartChunk
         </Link>
 
-        <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
+        <nav aria-label="Main" className="hidden items-center gap-0.5 xl:flex">
           {NAV_GROUPS.map((group) => (
             <NavDropdown key={group.label} group={group} />
           ))}
@@ -278,13 +278,13 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           <NavControls />
         </div>
 
         <button
           type="button"
-          className="btn px-3 py-1.5 lg:hidden"
+          className="btn px-3 py-1.5 xl:hidden"
           aria-expanded={mobileOpen}
           aria-controls="mobile-nav"
           onClick={() => setMobileOpen((value) => !value)}
@@ -297,7 +297,7 @@ export function Navbar() {
         <nav
           id="mobile-nav"
           aria-label="Main (mobile)"
-          className="max-h-[calc(100vh-var(--nav-h))] space-y-4 overflow-y-auto border-t border-border px-4 py-4 lg:hidden"
+          className="max-h-[calc(100vh-var(--nav-h))] space-y-4 overflow-y-auto border-t border-border px-4 py-4 xl:hidden"
         >
           {NAV_GROUPS.map((group) => (
             <div key={group.label}>

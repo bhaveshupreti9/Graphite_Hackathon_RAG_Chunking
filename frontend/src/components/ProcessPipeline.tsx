@@ -104,7 +104,7 @@ export function ProcessPipeline({ status }: ProcessPipelineProps) {
                 <span
                   aria-hidden="true"
                   className={cn(
-                    'relative flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-[10px]',
+                    'relative flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-[11px]',
                     isError
                       ? 'bg-bad text-white'
                       : isActive

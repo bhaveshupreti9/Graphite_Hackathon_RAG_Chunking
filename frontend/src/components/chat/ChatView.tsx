@@ -246,7 +246,7 @@ export function ChatView({ method, compact = false }: ChatViewProps) {
                       key={label}
                       className={cn(
                         'flex items-center gap-2 transition-colors duration-300',
-                        step <= stage ? 'text-fg' : 'text-muted/60',
+                        step <= stage ? 'text-fg' : 'text-muted',
                       )}
                     >
                       <span
@@ -312,7 +312,7 @@ export function ChatView({ method, compact = false }: ChatViewProps) {
             placeholder={
               history.length > 0 ? 'Ask a follow-up…' : 'Ask a question about the document…'
             }
-            className="max-h-40 min-h-[2.5rem] flex-1 resize-none bg-transparent px-2 py-2 text-[15px] text-fg placeholder:text-muted/70 focus:outline-none"
+            className="max-h-40 min-h-[2.5rem] flex-1 resize-none bg-transparent px-2 py-2 text-base text-fg placeholder:text-muted/70 focus:outline-none"
           />
           <button
             type="submit"

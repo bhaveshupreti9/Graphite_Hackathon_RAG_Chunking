@@ -26,14 +26,14 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['"Bricolage Grotesque Variable"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['"Inter Variable"', 'Inter', '"Segoe UI"', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono Variable"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
       fontSize: {
-        // Modular scale (1.25) on a 15px base.
-        xs: ['0.75rem', { lineHeight: '1.1rem' }],
-        sm: ['0.875rem', { lineHeight: '1.35rem' }],
-        base: ['0.9375rem', { lineHeight: '1.55rem' }],
+        // Readable scale on a 16px base: nothing smaller than 13px.
+        xs: ['0.8125rem', { lineHeight: '1.25rem' }],
+        sm: ['0.9375rem', { lineHeight: '1.45rem' }],
+        base: ['1rem', { lineHeight: '1.65rem' }],
         lg: ['1.17rem', { lineHeight: '1.7rem' }],
         xl: ['1.46rem', { lineHeight: '1.9rem' }],
         '2xl': ['1.83rem', { lineHeight: '2.2rem' }],

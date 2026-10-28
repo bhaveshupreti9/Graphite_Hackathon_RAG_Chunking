@@ -59,7 +59,7 @@ export function VisualizerFallback({
       >
         {showNaive ? (
           <g>
-            <text x={naiveX} y={18} className="fill-fg text-[12px] font-medium">
+            <text x={naiveX} y={18} className="fill-fg text-[13px] font-medium">
               Traditional
             </text>
             {model.segments.map((segment, index) => {
@@ -109,7 +109,7 @@ export function VisualizerFallback({
 
         {showSmart ? (
           <g>
-            <text x={smartX} y={18} className="fill-fg text-[12px] font-medium">
+            <text x={smartX} y={18} className="fill-fg text-[13px] font-medium">
               SmartChunk
             </text>
             {model.sections.map((section, index) => {

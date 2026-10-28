@@ -56,7 +56,7 @@ export function ErrorState({
             {detail}
           </p>
         ) : null}
-        <p className="font-mono text-xs text-muted/70">{apiError.code}</p>
+        <p className="font-mono text-xs text-muted">{apiError.code}</p>
       </div>
       {onRetry ? (
         <button

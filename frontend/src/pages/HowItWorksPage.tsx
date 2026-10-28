@@ -217,7 +217,7 @@ function VectorFigure() {
         viewport={inView}
         transition={{ delay: 0.8, type: 'spring' }}
       />
-      <text x={query.x - 34} y={query.y + 24} className="fill-fg text-[11px]">
+      <text x={query.x - 34} y={query.y + 24} className="fill-fg text-[12.5px]">
         your question
       </text>
     </svg>

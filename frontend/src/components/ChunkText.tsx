@@ -14,10 +14,19 @@ interface ChunkTextProps {
 // A complete Markdown table: a header row followed by a |---|---| separator row.
 const WHOLE_TABLE = /^[^\n]*\|[^\n]*\n\s*\|?\s*:?-{2,}:?\s*\|/m
 
+/** True when every line is a heading or a table row, i.e. the chunk is one whole table. */
+function isPureTable(text: string): boolean {
+  const lines = text.split('\n').filter((line) => line.trim() !== '')
+  return (
+    WHOLE_TABLE.test(text) &&
+    lines.every((line) => /^\s{0,3}#{1,6}\s/.test(line) || line.trim().startsWith('|'))
+  )
+}
+
 export function ChunkText({ text, type, className, clamp }: ChunkTextProps) {
   // In the full view, a table chunk that still has its header row is drawn as a real table.
   // Cut-up tables (no header) stay as raw text so the damage remains visible.
-  if (type === 'table' && !clamp && WHOLE_TABLE.test(text)) {
+  if (type === 'table' && !clamp && isPureTable(text)) {
     return (
       <RichText
         text={text}

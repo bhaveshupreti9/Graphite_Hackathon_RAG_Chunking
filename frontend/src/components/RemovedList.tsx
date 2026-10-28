@@ -75,7 +75,7 @@ export function RemovedList({ items, limit = 6, className }: RemovedListProps) {
               </span>
               <span>{formatPage(item.page)}</span>
             </div>
-            <p className="mt-1.5 text-sm text-fg/70 line-through decoration-noise/60">
+            <p className="mt-1.5 text-sm text-fg/80 line-through decoration-noise/60">
               {item.text}
             </p>
             <p className="mt-1 text-xs text-muted">{item.reason}</p>

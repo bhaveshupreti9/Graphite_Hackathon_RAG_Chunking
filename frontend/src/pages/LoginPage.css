@@ -7,6 +7,7 @@
   padding: 50px 0 40px;
   color: #fff;
   font-family:
+    'Inter Variable',
     Inter,
     -apple-system,
     'Segoe UI',
@@ -60,7 +61,8 @@
   border: 0;
   color: #8a96b8;
   font:
-    500 17px Inter,
+    500 17px 'Inter Variable',
+    Inter,
     -apple-system,
     'Segoe UI',
     Roboto,
@@ -101,7 +103,8 @@
   border-radius: 10px;
   padding: 0 16px;
   font:
-    18px Inter,
+    18px 'Inter Variable',
+    Inter,
     -apple-system,
     'Segoe UI',
     Roboto,
@@ -130,7 +133,8 @@
   background: #4545f2;
   color: #fff;
   font:
-    600 17px Inter,
+    600 17px 'Inter Variable',
+    Inter,
     -apple-system,
     'Segoe UI',
     Roboto,

@@ -105,12 +105,12 @@ function MethodBars({
             dataKey="name"
             tickLine={false}
             axisLine={{ stroke: colors.border }}
-            tick={{ fill: colors.muted, fontSize: 12 }}
+            tick={{ fill: colors.muted, fontSize: 13 }}
           />
           <YAxis
             tickLine={false}
             axisLine={false}
-            tick={{ fill: colors.muted, fontSize: 12 }}
+            tick={{ fill: colors.muted, fontSize: 13 }}
             domain={kind === 'score' ? [0, 1] : [0, 'auto']}
             ticks={kind === 'score' ? [0, 0.2, 0.4, 0.6, 0.8, 1] : undefined}
             allowDecimals={kind === 'score'}
@@ -125,7 +125,7 @@ function MethodBars({
             align="right"
             iconType="circle"
             iconSize={8}
-            wrapperStyle={{ fontSize: 12, color: colors.muted, paddingBottom: 8 }}
+            wrapperStyle={{ fontSize: 13, color: colors.muted, paddingBottom: 8 }}
           />
           <Bar
             dataKey="naive"
@@ -139,7 +139,7 @@ function MethodBars({
                 dataKey="naive"
                 position="top"
                 fill={colors.muted}
-                fontSize={12}
+                fontSize={13}
                 formatter={(value: number) => (kind === 'score' ? value.toFixed(2) : value)}
               />
             ) : null}
@@ -156,7 +156,7 @@ function MethodBars({
                 dataKey="smart"
                 position="top"
                 fill={colors.fg}
-                fontSize={12}
+                fontSize={13}
                 formatter={(value: number) => (kind === 'score' ? value.toFixed(2) : value)}
               />
             ) : null}
