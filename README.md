@@ -26,6 +26,7 @@ SmartChunk is a document chunking engine for Retrieval-Augmented Generation (RAG
 16. [Limitations](#16-limitations)
 17. [Testing](#17-testing)
 18. [Team](#18-team)
+19. Deployment link - https://graphite-hackathon-rag-chunking-lac.vercel.app/
 
 ---
 
